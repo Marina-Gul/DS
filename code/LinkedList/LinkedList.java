@@ -16,17 +16,22 @@ public class LinkedList{
     }
         
     Node head;
+    static int size=0;
+    
     void addToBack(int data)
     {
         Node node=new Node(data);
         
-        if(head==null)
+        if(head==null){
             head=node;
+            size++;
+        }
         else{
             Node n=head;
             while(n.next!=null)
                 n=n.next;
             n.next=node;
+            size++;
         }
     }
     
@@ -41,17 +46,22 @@ public class LinkedList{
         void addToFront(int data)
         {
             Node node =new Node(data);
+            if(isEmpty()){
+                head=node;
+                size++;
             
+            }
+            else{
             node.next=head;
             head=node;
+            size++;
+            }
 
         }
 
     void addMiddle(int index,int data)
     {
         Node node=new Node(data);
-        node.data=data;
-        node.next=null;
         Node n=head;
         for(int i=1;i<index-1;i++)
         {
@@ -59,33 +69,47 @@ public class LinkedList{
         }
         node.next=n.next;
         n.next=node;
+        size++;
     }
     void removeFromFront()
     {
-       head=head.next;
+       if(isEmpty()){
+        System.out.println("List is Empty");
+       }
+        else{
+            head=head.next;
+            size--;
+        }
 
     }
     void removeFromBack()
     {
+        if(isEmpty()){
+            System.out.println("List is Empty");
+           }
+        else{
         Node n=head;
         while(n.next.next!=null)
             n=n.next;
         n.next=null;
+        size--;
+        }
     }
     void removeAt(int index)
     {
     if (index==1)
-        removeFromFront();
+         removeFromFront();
     
     else{
         Node n=head;
-        Node temp=null;
+        Node temp;
         for(int i=1;i<index-1;i++)
         {
             n=n.next;
         }
         temp=n.next;
         n.next=temp.next;
+        size--;
     }
 }
     
