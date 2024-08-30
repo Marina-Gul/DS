@@ -1,15 +1,15 @@
 package LinkedList;
-class Node {
-    int data;
-    Node next;
 
-    Node(int value) {
-        data = value;
-        next = null;
-    }
-}
 public class CircularLinkedList {
+   public static class Node {
+        int data;
+        Node next;
     
+        Node(int value) {
+            data = value;
+            next = null;
+        }
+    }
     public static Node insertAtBeginning(Node last, int data){
         
         Node newNode = new Node(data);

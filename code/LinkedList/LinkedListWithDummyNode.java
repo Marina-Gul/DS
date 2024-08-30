@@ -1,19 +1,22 @@
 package LinkedList;
 
-class Node {
-    int data;
-    Node next;
 
-    public Node(int data) {
-        this.data = data;
-        next = null;
-    }
-
-    public Node(Node next){
-        this.next = next;
-    }
-}
 public class LinkedListWithDummyNode {
+    class Node {
+        int data;
+        Node next;
+    
+        public Node(int data) {
+            this.data = data;
+            next = null;
+        }
+    
+        public Node(Node next){
+            this.next = next;
+        }
+    }
+    
+    
     Node head;
     int size;
  
