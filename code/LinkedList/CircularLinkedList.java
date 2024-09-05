@@ -16,7 +16,7 @@ public class CircularLinkedList {
 
     // If the list is empty, make the new node point to itself and set it as last
     
-    if (last == null) {
+    if (last == null) { 
         newNode.next = newNode;
         last=newNode;
         return last;
