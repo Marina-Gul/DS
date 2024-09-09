@@ -1,18 +1,18 @@
 package LinkedList;
+ class Node {
+    String name;
+    Node prev, next;
 
-
-public class DoublyLinkedList {
-    public class Node {
-        String name;
-        Node prev, next;
-    
-        Node (String name) {
-            this.prev = null;
-            this.next = null;
-            this.name = name;
-        }
+    Node (String name) {
+        this.prev = null;
+        this.next = null;
+        this.name = name;
     }
+}
+public class DoublyLinkedList {
+  
     Node head;
+    int size=0;
 
     // Add node with name in beginning of linkedlist, name as parameter  
     public void insertAtBeginning(String name) {
@@ -109,6 +109,7 @@ public class DoublyLinkedList {
         }
         tail.next = head;
         head.prev = tail;
+        
     }
 
     // Print all the nodes in linkedlist, make sure it works on circular double linkedlist  
@@ -116,6 +117,7 @@ public class DoublyLinkedList {
         if (head == null) return;
         Node temp = head;
         do {
+            if(temp==null){return;}
             System.out.println(temp.name);
             temp = temp.next;
         } while (temp != head);
@@ -137,5 +139,6 @@ public class DoublyLinkedList {
         list.makeCircular();
         System.out.println("Circular Linked List:");
         list.printAll();
+
     }
 }
