@@ -3,11 +3,11 @@ package LinkedList;
 public class LinkedList{
 
     class Node{
-        int data;
+        Object data;
         Node next;
     
         //Constructor
-        Node(int data)
+        Node(Object data)
         {
             this.data=data;
             this.next=null;
@@ -16,61 +16,61 @@ public class LinkedList{
     }
         
     Node head;
-    static int size=0;
+    int size=0;
     
-    void addToBack(int data)
+    void addToBack(Object data)
     {
-        Node node=new Node(data);
+        Node newNode=new Node(data);
         
         if(head==null){
-            head=node;
-            size++;
+            head=newNode;
         }
         else{
-            Node n=head;
-            while(n.next!=null)
-                n=n.next;
-            n.next=node;
-            size++;
+            Node temp=head;
+            while(temp.next!=null){
+                temp=temp.next;
+            }   
+            
+            temp.next=newNode;
         }
+        size++;
+
     }
     
     void printList() {
-        Node node= head;
-        while (node.next != null){
-            System.out.print(node.data + " ");
-            node = node.next;
+        Node temp= head;
+        while (temp.next != null){
+            System.out.print(temp.data + " - > ");
+            temp = temp.next;
         }
-        System.out.print(node.data + " ");
+        System.out.print(temp.data + " ");
     }
-        void addToFront(int data)
-        {
-            Node node =new Node(data);
-            if(isEmpty()){
-                head=node;
-                size++;
-            
-            }
-            else{
-            node.next=head;
-            head=node;
-            size++;
-            }
-
+        
+    void addToFront(Object data){
+        
+        Node newNode =new Node(data);
+        if(isEmpty()){
+            head=newNode;
+        }else{
+        newNode.next=head;
+        head=newNode;
+        }
+        size++;
         }
 
-    void addMiddle(int index,int data)
+    void addMiddle(int index,Object data)
     {
-        Node node=new Node(data);
+        Node newNode=new Node(data);
         Node n=head;
         for(int i=1;i<index-1;i++)
         {
             n=n.next;
         }
-        node.next=n.next;
-        n.next=node;
+        newNode.next=n.next;
+        n.next=newNode;
         size++;
     }
+    
     void removeFromFront()
     {
        if(isEmpty()){
