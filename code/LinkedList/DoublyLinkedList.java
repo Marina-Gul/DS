@@ -1,16 +1,17 @@
 package LinkedList;
 
-public class Node {
-    String name;
-    Node prev, next;
 
-    Node (String name) {
-        this.prev = null;
-        this.next = null;
-        this.name = name;
-    }
-}
 public class DoublyLinkedList {
+    public class Node {
+        String name;
+        Node prev, next;
+    
+        Node (String name) {
+            this.prev = null;
+            this.next = null;
+            this.name = name;
+        }
+    }
     Node head;
 
     // Add node with name in beginning of linkedlist, name as parameter  
