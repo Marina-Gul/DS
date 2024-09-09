@@ -62,7 +62,7 @@ public class LinkedList{
     {
         Node newNode=new Node(data);
         Node n=head;
-        for(int i=1;i<index-1;i++)
+        for(int i=1;i<index-1;i++)      
         {
             n=n.next;
         }
