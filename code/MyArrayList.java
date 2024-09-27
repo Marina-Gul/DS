@@ -42,7 +42,7 @@ public class MyArrayList<T> {
     }
 
     // Method to update the element at a specific index
-    @SuppressWarnings("unchecked")
+  
     public void set(int index, T element) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of range");

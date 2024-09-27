@@ -8,7 +8,7 @@ public class StackUsingArray {
 
     StackUsingArray(int c){
          
-        int top=-1; 
+        //int top=-1; 
         size=c;
         a = new int[size]; // Maximum size of Stack 
         
@@ -23,7 +23,6 @@ public class StackUsingArray {
     { 
         if (!isEmpty()) { 
             System.out.println("Stack Overflow"); 
-            return; 
         } 
         else { 
             a[++top] = x; 
