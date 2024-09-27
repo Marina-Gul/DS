@@ -33,6 +33,33 @@ public class Practice extends LinkedList{
         return second.data;
     }
 
+    public void reverseList(){
+        head=reverseList(head);
+    }
+
+    public Node reverseList(Node head) {
+        
+        // Initialize three pointers: curr, prev and next
+        Node curr = head, prev = null, next;
+
+        // Traverse all the nodes of Linked List
+        while (curr != null) {
+            
+            // Store next
+            next = curr.next;
+            
+            // Reverse current node's next pointer
+            curr.next = prev;
+            
+            // Move pointers one position ahead
+            prev = curr;
+            curr = next;
+        }
+        
+        // Return the head of reversed linked list
+        return prev;
+    }
+
     public static void main(String[] args) {
         Practice list =new Practice();
         list.addToBack(10);
@@ -45,5 +72,10 @@ public class Practice extends LinkedList{
 
         // Getting the 2nd node from the end
         System.out.println("\n 2nd node from the end is: " + list.nthFromLast(2));  // Output: 40
+
+       list.reverseList();
+       list.printList();
+
+    
     }
     }
