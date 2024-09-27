@@ -1,8 +1,10 @@
 package Sorting;
 
+import java.util.Arrays;
+
 public class MergeSort {
     
-    static void split(int arr[], int l, int r)
+    void split(int arr[], int l, int r)
     {
         if (l < r) {
 
@@ -18,7 +20,7 @@ public class MergeSort {
         }
     }
 
-    static void merge(int arr[], int l, int m, int r)
+    void merge(int arr[], int l, int m, int r)
     {
         // Find sizes of two subarrays to be merged
         int n1 = m - l + 1;
@@ -66,5 +68,18 @@ public class MergeSort {
             j++;
             k++;
         }
+    }
+     public static void main(String args[])
+    {
+        int arr[] = { 12, 11, 13, 5, 6 };
+
+        System.out.println("Unsorted array : " + Arrays.toString(arr));
+        
+        MergeSort ob = new MergeSort();
+        
+        ob.split(arr,0,arr.length-1);
+
+        System.out.println("Sorted array : " + Arrays.toString(arr));
+        
     }
 }
